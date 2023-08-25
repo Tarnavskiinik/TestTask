@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.adhesion {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+    transition: bottom 1s ease-in-out;
+}
+
+.adhesion.active {
+    bottom: 0;
+}
+
+.adhesion-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+
+}
+.banner__img-women, .banner__img-shoes{
+    width: 159px;
+}
+.banner{      
+    margin: 0 auto;          
+    max-width: 1024px;
+    width: 100%;
+    max-height: 90px;
+    background: url('./img/1024x90.jpg') center/contain;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    font-family: Roboto;
+    font-weight: 700;
+}   
+.banner-object{
+    animation: desktop 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    transition: transform 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-left: 40px;
+}
+@keyframes desktop {
+    0%{ transform: translateY(120px)}
+    4%{ transform: translateY(-15px)}
+    40%{transform: translateY(-15px)}
+    47%{transform:translateY(-185px)}
+    90%{transform: translateY(-185px)}
+    100%{ transform: translateY(-300px)}
+}
+.banner__text{
+    display: flex;
+    flex-direction: column;
+    animation: 3s desktop-text ;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    gap: 50px;
+}
+.banner__text-sale{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.banner__text-head{
+    font-size: 47px;
+    margin: 12px 0px 0px;
+    line-height: 1;
+    color: #ffc400;
+    font-style: italic;
+}
+.banner__text-description{
+    margin: 0;
+    font-size: 20.81px;
+    text-transform: uppercase;
+    color: white;
+}
+@keyframes desktop-text {
+    0% { transform: translateY(-260px); }
+    4% { transform: translateY(-137px); }
+    40% { transform: translateY(-137px); }
+    47% { transform: translateY(-3px); }
+    90% { transform: translateY(-3px); }
+    100% { transform: translateY(120px); }
+}
+.banner__text-sale-second{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.banner__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+}
+.banner__btn{
+    animation: 3s button ;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    display: inline-block;
+    background-color: white;
+    color: #283693;
+    padding: 2px 25px;
+    border: 1px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25.22px;
+    text-transform: uppercase;
+}
+@keyframes button{
+    0% { transform: scale(1); }
+    4% { transform: scale(1); }
+    40% { transform: scale(1); }
+    55% { transform: scale(1); }
+    56% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+    64% { transform: scale(1.1); }
+    67% { transform: scale(1); }
+    71% { transform: scale(1.1); }
+    74% { transform: scale(1); }
+    90% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+@media (min-width:768px) and (max-width:1023px){
+    .banner{
+        background: url('./img/768x90.jpg') center/contain;
+        width: 768px;
+        height: 90px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .banner-object{
+        animation: 3s adaptive-tablet ;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+}
+    @keyframes adaptive-tablet {
+        0%{ transform: translateY(120px)}
+        4%{ transform: translateY(86px)}
+        40%{transform: translateY(86px)}
+        47%{transform:translateY(-84px)}
+        90%{transform: translateY(-84px)}
+        100%{ transform: translateY(-250px)}
+}
+    .banner__text{
+        display: flex;
+        flex-direction: column;
+        animation: 3s adaptive-tablet-text ;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        gap: 50px;
+        margin-left: 40px;
+    }
+    @keyframes adaptive-tablet-text {
+        0%{ transform: translateY(-170px)}
+        4%{ transform: translateY(-70px)}
+        40%{transform: translateY(-70px)}
+        47%{transform:translateY(64px)}
+        90%{transform: translateY(64px)}
+        100%{ transform: translateY(150px)}
+    }
+    .banner__button{
+        margin-right: 37px;
+    }
+    }
+@media (min-width:360px) and (max-width:767px){
+    .banner{
+        background: url('./img/360x90.jpg') center/contain;
+        width: 360px;
+        height: 90px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .banner__img-women, .banner__img-shoes{
+        width: 119px;
+    }
+    .banner-object{
+        animation: 3s mobile-adaptive ;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        margin: 0px 3px;
+    }
+
+    @keyframes mobile-adaptive {
+        0%{ transform: translateY(180px)}
+        4%{ transform: translateY(67px)}
+        40%{transform: translateY(67px)}
+        47%{transform:translateY(-70px)}
+        90%{transform: translateY(-70px)}
+        100%{ transform: translateY(-200px)}
+    }
+    .banner__text{
+        animation: 3s mobile-text ;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes mobile-text  {
+        0% { transform: translateY(-150px); }
+        4% { transform: translateY(-57px); }
+        40% { transform: translateY(-57px); }
+        47% { transform: translateY(50px); }
+        90% { transform: translateY(50px); }
+        100% { transform: translateY(180px); }
+}
+    .banner__img-women{
+        content: url(./img/IMAGE_1.png);
+    }
+    .banner__img-shoes{
+        content: url(./img/IMAGE_2.png);
+    }
+    .banner__text-head{
+        font-size: 29.74px;
+    }
+    .banner__text-description{
+        font-size: 12px;
+    }
+    .banner__button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 12px auto; 
+    }
+    .banner__btn{
+        max-width: 68px;
+        padding: 0px;
+        border: 1px solid white;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    .adhesion-close{
+        width: 50px;
+        right: 20px;
+    }
+}
